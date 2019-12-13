@@ -100,34 +100,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#starter_form").onsubmit =  () => {
         // Save the username in the local storage
         my_storage.setItem('username', document.querySelector("#name").value);
-        // Disable the starter form
         document.querySelector("#starter_button").disabled = true;
-        // Enable the channel creation/selection
         document.querySelector("#create_button").disabled = false;
         document.querySelector("#channel_list").style.display = "block";
-        // Reset the form's value
         document.querySelector("#name").value = "";
         socket.emit("username", my_storage.getItem('username'));
-        // Prevent form submission
+        
         return false;
 
     };
-    // Execute when the create channel form is submitted
+
     document.querySelector("#create_channel").onsubmit = () => {
-        // Emit the channel creation event using the input from the user
         const channel = document.querySelector("#channel").value;
         socket.emit("channel_creation", channel);
-        // Prevent form submission
         return false;
     };
     
-    /* Private messaging, does not work
-    // Execute when an element of the users list is clicked
-    document.querySelectorAll(".my_user").forEach(li => {
-        li.onclick = () => {
-            // Trigger the change channel event on the server side
-            socket.emit('change_channel', my_storage.getItem('channel'), li.dataset.channel);
-        };
-    });
-    */
 });

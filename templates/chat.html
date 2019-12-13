@@ -1,5 +1,5 @@
 {% extends "chat-layout.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}Chat{% endblock %}
 {% block main %}
 	<div id = "channel_list">
 		<header>Channels</header>
@@ -9,15 +9,7 @@
 			{% endfor %}
 		</ul>
 	</div>
-	<!-- List of users for private messaging, does not work
-	<div id = "users">
-		<header>Users</header>
-		<ul>
-			{% for user in users %}
-			<li class = "my_user" data-user = "{{ user }}" data-channel = "{{ users[user] }}">{{ user }}</li>
-			{% endfor %}			
-		</ul>
-	-->
+	
 	</div>
 	<div id = "welcome">
 		<h1>Welcome to Mercury!</h1>
