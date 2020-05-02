@@ -13,7 +13,7 @@ app.config["SECRET_KEY"] = "b'U\x8fw^{\xca\x92E\x12w`\xce\xf9_S\xb2'"
 app.config['WTF_CSRF_SECRET_KEY'] = "b'f\xfa\x8b{X\x8b\x9eM\x83l\x19\xad\x84\x08\xaa"
 
 # Configure database
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://calqfxvqbxtbbn:6fe9fc7be82a96c7b3509f396af0c71b4a63e0185ec67b369b6c89dabd656a38@ec2-107-20-198-176.compute-1.amazonaws.com:5432/dbin3qup59b8ra"
+app.config['SQLALCHEMY_DATABASE_URI'] = ""
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
